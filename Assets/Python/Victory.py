@@ -1477,7 +1477,20 @@ def checkTurn(iGameTurn, iPlayer):
 		# third goal: end twelve wars through diplomacy by 2000 AD
 		if iGameTurn == getTurnForYear(2000):
 			expire(iCanada, 2)
+
+	elif iPlayer == iConnecticut:
+	
+		# first goal: 
+		if iGameTurn == getTurnForYear(2000):
+			expire(iConnecticut, 0)
 			
+		# second goal: 
+		if iGameTurn == getTurnForYear(2000):
+			expire(iConnecticut, 1)
+			
+		# third goal: 
+		if iGameTurn == getTurnForYear(2000):
+			expire(iConnecticut, 2)
 			
 	# check religious victory (human only)
 	if utils.getHumanID() == iPlayer:

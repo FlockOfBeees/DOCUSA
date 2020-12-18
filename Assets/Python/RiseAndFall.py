@@ -105,7 +105,7 @@ class RiseAndFall:
 		popup.setHeaderString(title)
 		popup.setBodyString(message)
 		for i in labels:
-		    popup.addButton( i )
+			popup.addButton( i )
 		popup.launch(False)
 
 	def eventApply7614(self, popupReturn):
@@ -251,7 +251,7 @@ class RiseAndFall:
 
 #######################################
 ### Main methods (Event-Triggered) ###
-#####################################  
+#####################################
 
 	def setup(self):
 
@@ -898,18 +898,18 @@ class RiseAndFall:
 		#fragment utility
 		if iGameTurn >= getTurnForYear(50) and iGameTurn % utils.getTurns(15) == 6:
 			self.fragmentIndependents()
-#		if (iGameTurn >= getTurnForYear(450) and iGameTurn % utils.getTurns(30) == 12):
-#			self.fragmentBarbarians(iGameTurn)
+#       if (iGameTurn >= getTurnForYear(450) and iGameTurn % utils.getTurns(30) == 12):
+#           self.fragmentBarbarians(iGameTurn)
 			
 		#fall of civs
 		#if (iGameTurn >= getTurnForYear(200) and iGameTurn % utils.getTurns(4) == 0):
-		#	self.collapseByBarbs(iGameTurn)
+		#   self.collapseByBarbs(iGameTurn)
 		#if (iGameTurn >= getTurnForYear(-2000) and iGameTurn % utils.getTurns(18) == 0): #used to be 15 in vanilla, because we must give some time for vassal states to form
-		#	self.collapseGeneric(iGameTurn)
+		#   self.collapseGeneric(iGameTurn)
 		#if (iGameTurn >= getTurnForYear(-2000) and iGameTurn % utils.getTurns(13) == 7): #used to be 8 in vanilla, because we must give some time for vassal states to form
-		#	self.collapseMotherland(iGameTurn)
+		#   self.collapseMotherland(iGameTurn)
 		#if (iGameTurn > getTurnForYear(300) and iGameTurn % utils.getTurns(10) == 6):
-		#	self.secession(iGameTurn)
+		#   self.secession(iGameTurn)
 
 		if iGameTurn % utils.getTurns(10) == 5:
 			sta.checkResurrection(iGameTurn)
@@ -1398,7 +1398,7 @@ class RiseAndFall:
 					else:
 						self.birthInForeignBorders(iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight)
 						
-				if bBirthInCapital:	
+				if bBirthInCapital: 
 					utils.clearCatapult(iCiv)
 						
 			else:
@@ -1458,7 +1458,7 @@ class RiseAndFall:
 				pPlot.setOwner(iCiv)
 			data.lDeleteMode[0] = -1
 			return
-		    
+			
 		#print ("iCurrentPlayer", iCurrentPlayer, "iCiv", iCiv)
 		if iCurrentPlayer != iCiv-1 and iCiv not in [iCarthage, iGreece]:
 			return
@@ -1512,9 +1512,9 @@ class RiseAndFall:
 						if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
 										
 				lPlots = utils.surroundingPlots(tCapital, 3)
-				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned          
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned           
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned          
 				self.assignTechs(iCiv)
 				data.players[iCiv].iPlagueCountdown = -iImmunity
 				utils.clearPlague(iCiv)
@@ -2297,9 +2297,9 @@ class RiseAndFall:
 		lTempPlots = [(x, y) for (x, y) in data.lTempPlots if not gc.getMap().plot(x, y).isCore(data.iOldCivFlip)]
 		plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
 		if not plotList:
-			plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )			
+			plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )            
 		if not plotList:
-			plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )				
+			plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )             
 		if plotList:
 			tPlot = utils.getRandomEntry(plotList)
 			if tPlot:
@@ -3005,6 +3005,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iCanada:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iConnecticut:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 			
 	def create1700ADstartingUnits(self):
 

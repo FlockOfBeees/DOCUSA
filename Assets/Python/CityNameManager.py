@@ -87,6 +87,7 @@ def getLanguages(iCiv):
 	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
 	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iCeltia: return (iLangCeltic,)
+	elif iCiv == iConnecticut: return (iLangEnglish)
 	else: return None
 	
 def getNativeLanguages(tPlot):

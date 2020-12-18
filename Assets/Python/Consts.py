@@ -8,24 +8,24 @@ iWorldX = 124
 iWorldY = 68
 
 # initialise player variables to player IDs from WBS
-iNumPlayers = 45
+iNumPlayers = 46
 (iEgypt, iBabylonia, iHarappa, iChina, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, 
 iMaya, iTamils, iEthiopia, iKorea, iByzantium, iJapan, iVikings, iTurks, iArabia, iTibet, 
 iIndonesia, iMoors, iSpain, iFrance, iKhmer, iEngland, iHolyRome, iRussia, iMali, iPoland, 
 iPortugal, iInca, iItaly, iMongolia, iAztecs, iMughals, iOttomans, iThailand, iCongo, iNetherlands, 
-iGermany, iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
+iGermany, iAmerica, iArgentina, iBrazil, iCanada, iConnecticut) = range(iNumPlayers)
 
 (pEgypt, pBabylonia, pHarappa, pChina, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, 
 pMaya, pTamils, pEthiopia, pKorea, pByzantium, pJapan, pVikings, pTurks, pArabia, pTibet, 
 pIndonesia, pMoors, pSpain, pFrance, pKhmer, pEngland, pHolyRome, pRussia, pMali, pPoland, 
 pPortugal, pInca, pItaly, pMongolia, pAztecs, pMughals, pOttomans, pThailand, pCongo, pNetherlands, 
-pGermany, pAmerica, pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
+pGermany, pAmerica, pArgentina, pBrazil, pCanada, pConnecticut) = [gc.getPlayer(i) for i in range(iNumPlayers)]
 
 (teamEgypt, teamBabylonia, teamHarappa, teamChina, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
 teamMaya, teamTamils, teamEthiopia, teamKorea, teamByzantium, teamJapan, teamVikings, teamTurks, teamArabia, teamTibet, 
 teamIndonesia, teamMoors, teamSpain, teamFrance, teamKhmer, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, 
 teamPortugal, teamInca, teamItaly, teamMongolia, teamAztecs, teamMughals, teamOttomans, teamThailand, teamCongo, teamNetherlands, 
-teamGermany, teamAmerica, teamArgentina, teamBrazil, teamCanada) = [gc.getTeam(i) for i in range(iNumPlayers)]
+teamGermany, teamAmerica, teamArgentina, teamBrazil, teamCanada, teamConnecticut) = [gc.getTeam(i) for i in range(iNumPlayers)]
 
 iHolland = iNetherlands
 iDelhi = iMughals
@@ -56,13 +56,13 @@ l0ArrayTotal =  [0 for i in range(iNumTotalPlayers)]
 lm1Array =      [-1 for i in range(iNumPlayers)]
 
 # civilizations, not players
-iNumCivilizations = 57
+iNumCivilizations = 58
 (iCivAmerica, iCivArabia, iCivArgentina, iCivAztec, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelt, 
 iCivChina, iCivColombia, iCivEgypt, iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHarappa, iCivHolyRome, 
 iCivInca, iCivIndia, iCivIndonesia, iCivIran, iCivItaly, iCivJapan, iCivKhmer, iCivKongo, iCivKorea, iCivMali, 
 iCivMaya, iCivMexico, iCivMongols, iCivMoors, iCivMughals, iCivNativeAmericans, iCivNetherlands, iCivOttomans, iCivPersia, iCivPoland, 
 iCivPolynesia, iCivPortugal, iCivRome, iCivRussia, iCivSpain, iCivSumeria, iCivTamils, iCivThailand, iCivTibet, iCivTurks,
-iCivVikings, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivilizations)
+iCivVikings, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian, iCivConnecticut) = range(iNumCivilizations)
 
 iCivCongo = iCivKongo
 iCivAztecs = iCivAztec
@@ -83,9 +83,9 @@ lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia,
 		[iMaya, iInca, iAztecs, iAmerica, iArgentina, iBrazil, iCanada]] #American
 		
 lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica, iArgentina, iBrazil, iCanada], #Europe and NA
-	       [iEgypt, iBabylonia, iHarappa, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMoors, iMali, iOttomans, iMughals, iTamils, iCongo, iTurks], #Middle East
-	       [iChina, iKorea, iJapan, iTibet, iKhmer, iIndonesia, iMongolia, iThailand], #Far East
-	       [iPolynesia, iMaya, iInca, iAztecs]] #Native America
+		   [iEgypt, iBabylonia, iHarappa, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMoors, iMali, iOttomans, iMughals, iTamils, iCongo, iTurks], #Middle East
+		   [iChina, iKorea, iJapan, iTibet, iKhmer, iIndonesia, iMongolia, iThailand], #Far East
+		   [iPolynesia, iMaya, iInca, iAztecs]] #Native America
 
 
 lCivBioOldWorld = [iEgypt, iIndia, iChina, iBabylonia, iHarappa, iGreece, iPolynesia, iPersia, iCarthage, iRome, iJapan, iTamils, 
@@ -192,6 +192,7 @@ lNeighbours = [
 [iSpain, iPortugal, iInca, iBrazil], #Argentina
 [iSpain, iPortugal, iInca, iArgentina], #Brazil
 [iAmerica], #Canada
+[], #Connecticut
 ]
 
 #for stability hit on spawn
@@ -247,51 +248,52 @@ lOlderNeighbours = [
 
 # converted to years - edead
 tBirth = (
--3000, # 0, #3000BC			# Egypt
--3000, # 0, #3000BC			# Babylonia
--3000,					# Harappa
--2070,					# China
--1600, # 50, #1600BC			# Greece
--1500, # 0, #3000BC			# India
--1200, # 66, #814BC # Leoreth: 1200 BC	# Carthage
--1000,					# Polynesia
--850, # 84, #844BC			# Persia
--753, # 90, #753BC			# Rome
--400, 					# Maya
--300,					# Tamils
--290, # 121, #300BC			# Ethiopia
--50,					# Korea
-330,					# Byzantium
-525, # 97, #660BC			# Japan
-551, # 177, #551AD			# Vikings
-552,					# Turks
-620, # 183, #622AD			# Arabia
-630,					# Tibet
-650,					# Indonesia
-711,					# Moors
-722, # 193, #718AD			# Spain
-750, # 196, #751AD			# France
-800, # 187, #657AD			# Khmer
-820, # 203, #829AD			# England
-840, # 205, #843AD			# Holy Rome
-860, # 207, #860AD			# Russia
-989, # 220, #989AD			# Mali
-1025,					# Poland
-1130, # 234, #1128AD			# Portugal
-1150, # 236, #1150AD			# Inca
-1167, # Italy				# Italy
-1190, # 240, #1190AD			# Mongolia
-1195, # 241, #1195AD			# Aztecs
-1206,					# Mughals
-1280, # 249, #1280AD (1071AD)		# Turkey
-1350,					# Thailand
-1390,					# Congo
-1580, # 281, #922AD # Leoreth: 1500 AD	# Netherlands
-1700,					# Germany
-1775, # 346, #1775AD #332 for 1733AD	# America
-1810,					# Argentina
-1822,					# Brazil
-1867,					# Canada
+-3000, # 0, #3000BC         # Egypt
+-3000, # 0, #3000BC         # Babylonia
+-3000,                  # Harappa
+-2070,                  # China
+-1600, # 50, #1600BC            # Greece
+-1500, # 0, #3000BC         # India
+-1200, # 66, #814BC # Leoreth: 1200 BC  # Carthage
+-1000,                  # Polynesia
+-850, # 84, #844BC          # Persia
+-753, # 90, #753BC          # Rome
+-400,                   # Maya
+-300,                   # Tamils
+-290, # 121, #300BC         # Ethiopia
+-50,                    # Korea
+330,                    # Byzantium
+525, # 97, #660BC           # Japan
+551, # 177, #551AD          # Vikings
+552,                    # Turks
+620, # 183, #622AD          # Arabia
+630,                    # Tibet
+650,                    # Indonesia
+711,                    # Moors
+722, # 193, #718AD          # Spain
+750, # 196, #751AD          # France
+800, # 187, #657AD          # Khmer
+820, # 203, #829AD          # England
+840, # 205, #843AD          # Holy Rome
+860, # 207, #860AD          # Russia
+989, # 220, #989AD          # Mali
+1025,                   # Poland
+1130, # 234, #1128AD            # Portugal
+1150, # 236, #1150AD            # Inca
+1167, # Italy               # Italy
+1190, # 240, #1190AD            # Mongolia
+1195, # 241, #1195AD            # Aztecs
+1206,                   # Mughals
+1280, # 249, #1280AD (1071AD)       # Turkey
+1350,                   # Thailand
+1390,                   # Congo
+1580, # 281, #922AD # Leoreth: 1500 AD  # Netherlands
+1700,                   # Germany
+1775, # 346, #1775AD #332 for 1733AD    # America
+1810,                   # Argentina
+1822,                   # Brazil
+1867,                   # Canada
+1635,                   # Connecticut
 -3000, # 0,
 -3000, # 0,
 -3000, # 0,
@@ -302,51 +304,52 @@ tBirth = (
 
 # Leoreth: stability penalty from this date on
 tFall = (
--343,					# Egypt
--539,					# Babylonia
--1700,					# Harappa
-1127,					# China
--146,					# Greece
-600, # end of Gupta Empire		# India
--146,					# Phoenicia
-1200,					# Polynesia
-651,					# Persia
-235, # crisis of the third century	# Rome
-900,					# Maya
-1000,					# Tamils
-960,					# Ethiopia
-1255, #Mongol invasion			# Korea
-1204, #fourth crusade			# Byzantium
-2020,					# Japan
-1300,					# Vikings
-1507,					# Turks
-900,					# Arabia
-1500,					# Tibet
-1500,					# Indonesia
-1500,					# Moors
-2020,					# Spain
-2020,					# France
+-343,                   # Egypt
+-539,                   # Babylonia
+-1700,                  # Harappa
+1127,                   # China
+-146,                   # Greece
+600, # end of Gupta Empire      # India
+-146,                   # Phoenicia
+1200,                   # Polynesia
+651,                    # Persia
+235, # crisis of the third century  # Rome
+900,                    # Maya
+1000,                   # Tamils
+960,                    # Ethiopia
+1255, #Mongol invasion          # Korea
+1204, #fourth crusade           # Byzantium
+2020,                   # Japan
+1300,                   # Vikings
+1507,                   # Turks
+900,                    # Arabia
+1500,                   # Tibet
+1500,                   # Indonesia
+1500,                   # Moors
+2020,                   # Spain
+2020,                   # France
 1200, # earlier so that the Thai can spawn # Khmer
-2020,					# England
-2020, #1648,				# Holy Rome
-2020,					# Russia
-1600,					# Mali
-1650,					# Poland
-2020,					# Portugal
-1533,					# Inca
-2020,					# Italy
-1368,					# Mongolia
-1521,					# Aztecs
-1640,					# Mughals
-2020,					# Turkey
-2020,					# Thailand
-1800,					# Congo
-2020,					# Netherlands
-2020,					# Germany
-2020,					# America
-2020,					# Argentina
-2020,					# Brazil
-2020)					# Canada
+2020,                   # England
+2020, #1648,                # Holy Rome
+2020,                   # Russia
+1600,                   # Mali
+1650,                   # Poland
+2020,                   # Portugal
+1533,                   # Inca
+2020,                   # Italy
+1368,                   # Mongolia
+1521,                   # Aztecs
+1640,                   # Mughals
+2020,                   # Turkey
+2020,                   # Thailand
+1800,                   # Congo
+2020,                   # Netherlands
+2020,                   # Germany
+2020,                   # America
+2020,                   # Argentina
+2020,                   # Brazil
+2020,                   # Canada
+2020)                   # Connecticut
 
 dVictoryYears = {
 iCivEgypt : (-850, -100, 170),
@@ -397,13 +400,14 @@ iCivArgentina : (1930, 1960, 2000),
 iCivColombia : (1870, 1920, 1950),
 iCivBrazil : (1880, -1, 1950),
 iCivCanada : (1920, 1950, 2000),
+iCivConnecticut : (2000, 2000, 2000),
 }
 
 # Leoreth: date-triggered respawn for certain civs
 dRebirth = {
-iPersia : 1501,		# Iran
-iMaya : 1814,		# Colombia
-iAztecs : 1810,		# Mexico
+iPersia : 1501,     # Iran
+iMaya : 1814,       # Colombia
+iAztecs : 1810,     # Mexico
 }
 
 dRebirthCiv = {
@@ -415,12 +419,12 @@ iAztecs : iCivMexico,
 tResurrectionIntervals = (
 [(900, 1300), (1800, 2020)], #Egypt
 [(-3000, -500)], #Babylonia
-[],		# Harappa
+[],     # Harappa
 [(600, 2020)], #China
 [(1800, 2020)], #Greece
 [(1600, 1800), (1900, 2020)], #India
 [(-1000, -150)], #Carthage
-[],		# Polynesia
+[],     # Polynesia
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome
 [(0, 800)], #Maya
@@ -432,9 +436,9 @@ tResurrectionIntervals = (
 [(1520, 2020)], #Vikings
 [(1350, 1500)], #Turks
 [(1900, 2020)], #Arabia
-[],		#Tibet
+[],     #Tibet
 [(1900, 2020)], #Indonesia
-[(1000, 2020)],	#Moors
+[(1000, 2020)], #Moors
 [(1700, 2020)], #Spain
 [(1700, 2020)], #France
 [(1950, 2020)], #Khmer
@@ -447,17 +451,18 @@ tResurrectionIntervals = (
 [(1800, 1930)], #Inca
 [(1820, 2020)], #Italy
 [(1910, 2020)], #Mongolia
-[], 		#Aztec
+[],         #Aztec
 [(1940, 2020)], #Mughals
 [(1700, 2020)], #Ottomans
 [(1700, 2020)], #Thailand
-[],		#Congo
+[],     #Congo
 [(1700, 2020)], #Netherlands
 [(1840, 2020)], #Germany
 [(1770, 2020)], #America
 [(1810, 2020)], #Argentina
 [(1820, 2020)], #Brazil
 [(1867, 2020)], #Canada
+[], #Connecticut
 )
 
 #rnf. Some civs have a double entry, for a higher chance
@@ -507,6 +512,7 @@ lEnemyCivsOnSpawn = [
 [iSpain, iSpain, iIndependent,iIndependent2], #Argentina
 [iIndependent,iIndependent2], #Brazil
 [], #Canada
+[], #Connecticut
 ]
 
 # Leoreth
@@ -556,6 +562,7 @@ lTotalWarOnSpawn = [
 [], #Argentina
 [], #Brazil
 [], #Canada
+[], #Connecticut
 ]
 
 
@@ -606,61 +613,63 @@ tAggressionLevel = (
 0, #Argentina
 0, #Brazil
 0, #Canada
+0, #Connecticut
 0) #Barbs
 
 
 #war during rise of new civs
 tAIStopBirthThreshold = (
-    80, #Egypt
-    50, #Babylonia
-    50, #Harappa
-    60, #China
-    50, #Greece #would be 80 but with Turks must be lower
-    80, #India
-    80, #Carthage
-    80, #Polynesia
-    70, #Persia
-    80, #Rome
-    80, #Maya
-    80, #Tamils
-    80, #Ethiopia
-    80, #Korea
-    80, #Byzantium
-    80, #Japan
-    80, #Viking
-    50, #Turks
-    80, #Arabia
-    80, #Tibet
-    80, #Indonesia
-    80, #Moors
-    80, #Spain  #60 in vanilla and Warlords
-    80, #France #60 in vanilla and Warlords
-    80, #Khmer
-    50, #England
-    80, #Holy Rome #70 in vanilla and Warlords
-    50, #Russia
-    70, #Mali
-    40, #Poland
-    40, #Portugal
-    70, #Inca
-    60, #Italy
-    70, #Mongolia
-    50, #Aztec
-    70, #Mughals
-    70, #Turkey
-    80, #Thailand
-    80, #Congo
-    40, #Holland
-    80, #Germany
-    50, #America
-    60, #Argentina
-    60, #Brazil
-    60, #Canada
-    100,
-    100,
-    100,
-    100,
-    100)
+	80, #Egypt
+	50, #Babylonia
+	50, #Harappa
+	60, #China
+	50, #Greece #would be 80 but with Turks must be lower
+	80, #India
+	80, #Carthage
+	80, #Polynesia
+	70, #Persia
+	80, #Rome
+	80, #Maya
+	80, #Tamils
+	80, #Ethiopia
+	80, #Korea
+	80, #Byzantium
+	80, #Japan
+	80, #Viking
+	50, #Turks
+	80, #Arabia
+	80, #Tibet
+	80, #Indonesia
+	80, #Moors
+	80, #Spain  #60 in vanilla and Warlords
+	80, #France #60 in vanilla and Warlords
+	80, #Khmer
+	50, #England
+	80, #Holy Rome #70 in vanilla and Warlords
+	50, #Russia
+	70, #Mali
+	40, #Poland
+	40, #Portugal
+	70, #Inca
+	60, #Italy
+	70, #Mongolia
+	50, #Aztec
+	70, #Mughals
+	70, #Turkey
+	80, #Thailand
+	80, #Congo
+	40, #Holland
+	80, #Germany
+	50, #America
+	60, #Argentina
+	60, #Brazil
+	60, #Canada
+	60, #Connecticut
+	100,
+	100,
+	100,
+	100,
+	100)
 
 
 #RiseAndFall
@@ -710,6 +719,7 @@ tResurrectionProb = (
 100, #Argentina
 100, #Brazil
 100, #Canada
+100, #Connecticut
 #    100, #Holland
 #    100, #Portugal
 100) #Barbs 
@@ -762,6 +772,7 @@ tPatienceThreshold = (
 40, #Argentina
 40, #Brazil
 40, #Canada
+40, #Connecticut
 100) #Barbs
 
 dMaxColonists = {
@@ -947,11 +958,11 @@ StabilityTypesTexts = ["TXT_KEY_STABILITY_CATEGORY_EXPANSION", "TXT_KEY_STABILIT
 
 #Stability Parameters
 iNumStabilityParameters = 23
-(iParameterCorePeriphery, iParameterCoreScore, iParameterPeripheryScore, iParameterRecentExpansion, iParameterRazedCities, iParameterIsolationism,	# Expansion
-iParameterEconomicGrowth, iParameterTrade, iParameterMercantilism, iParameterCentralPlanning,								# Economy
-iParameterHappiness, iParameterCivicCombinations, iParameterCivicsEraTech, iParameterReligion,								# Domestic
-iParameterVassals, iParameterDefensivePacts, iParameterRelations, iParameterNationhood, iParameterTheocracy, iParameterMultilateralism,			# Foreign
-iParameterWarSuccess, iParameterWarWeariness, iParameterBarbarianLosses) = range(iNumStabilityParameters)						# Military
+(iParameterCorePeriphery, iParameterCoreScore, iParameterPeripheryScore, iParameterRecentExpansion, iParameterRazedCities, iParameterIsolationism,  # Expansion
+iParameterEconomicGrowth, iParameterTrade, iParameterMercantilism, iParameterCentralPlanning,                               # Economy
+iParameterHappiness, iParameterCivicCombinations, iParameterCivicsEraTech, iParameterReligion,                              # Domestic
+iParameterVassals, iParameterDefensivePacts, iParameterRelations, iParameterNationhood, iParameterTheocracy, iParameterMultilateralism,         # Foreign
+iParameterWarSuccess, iParameterWarWeariness, iParameterBarbarianLosses) = range(iNumStabilityParameters)                       # Military
 
 #Regions
 iNumRegions = 38
@@ -1097,5 +1108,5 @@ lReligionMapColors = ["COLOR_PLAYER_ORANGE", "COLOR_YELLOW", "COLOR_GREEN", "COL
 lReligionMapTexts = ["TXT_KEY_CULTURELEVEL_NONE", "TXT_KEY_WB_RELIGIONMAP_MINORITY", "TXT_KEY_WB_RELIGIONMAP_PERIPHERY", "TXT_KEY_WB_RELIGIONMAP_HISTORICAL", "TXT_KEY_WB_RELIGIONMAP_CORE"]
 
 lNetworkEvents = {
-	"CHANGE_COMMERCE_PERCENT" :	1200,
+	"CHANGE_COMMERCE_PERCENT" :     1200,
 }
